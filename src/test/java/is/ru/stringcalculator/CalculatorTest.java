@@ -34,4 +34,20 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
 
+    @Test(expected = RuntimeException.class)
+    public void negativeException() {
+        Calculator.add("-1,2");
+    }
+
+    @Test
+    public final void negativeThrown() {
+        RuntimeException exception = null;
+        try {
+                Calculator.add("1,-2");
+        } catch (RuntimeException e) {
+            exception = e;
+        }
+        assertEquals("Negatives not allowed: [-2]", exception.getMessage());
+    }  
+
 }
