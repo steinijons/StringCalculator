@@ -48,6 +48,12 @@ public class CalculatorTest {
             exception = e;
         }
         assertEquals("Negatives not allowed: [-2]", exception.getMessage());
-    }  
+    } 
+
+    @Test
+        public void testIllegalNumBiggerThan1000(){
+                assertEquals(2, Calculator.add("1001,2"));
+    }
+
 
 }

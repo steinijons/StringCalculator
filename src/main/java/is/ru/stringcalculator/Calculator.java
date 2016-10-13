@@ -32,7 +32,10 @@ public class Calculator {
 		    {
 		    	NegNum.add(Numberint);
 		    }
-		    total += toInt(number);
+		    if(Numberint <= 1000)
+		    {
+		    	total += Numberint;	
+		    }
 		}
 		if(NegNum.size() > 0)
 		{
